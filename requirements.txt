@@ -5,12 +5,13 @@ matplotlib
 flask
 ipykernel
 xgboost
-python-box
-pyYAML
+python-box # config box
+pyYAML # Read YAML file
 ensure
 joblib
 types-PyYAML
 Flask-Cors
 joblib
 seaborn
+pymongo
 -e .
