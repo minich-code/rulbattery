@@ -63,3 +63,13 @@ class ModelEvaluationConfig:
     all_params: dict
     metric_file_name: Path
     target_column: str
+
+
+# Metrics validation 
+@dataclass
+class MetricsValidationConfig:
+    root_dir: Path
+    metric_file_name: Path
+    validation_status_file: Path
+    metrics_thresholds: dict
+    

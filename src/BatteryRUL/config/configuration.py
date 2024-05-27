@@ -1,7 +1,7 @@
-from src.BatteryRUL.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH
+from src.BatteryRUL.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH, METRICS_FILE_PATH
 from src.BatteryRUL.utils.commons import read_yaml, create_directories
 from src.BatteryRUL.entity.configuration_entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig,
-                                                        ModelTrainerConfig, ModelEvaluationConfig)
+                                                        ModelTrainerConfig, ModelEvaluationConfig, MetricsValidationConfig)
 from pathlib import Path
 
 # Creating a ConfigurationManager class to manage configurations
@@ -10,13 +10,15 @@ class ConfigurationManager:
         self,
         config_filepath=CONFIG_FILE_PATH,
         params_filepath=PARAMS_FILE_PATH,
-        schema_filepath=SCHEMA_FILE_PATH):
+        schema_filepath=SCHEMA_FILE_PATH,
+        metrics_filepath=METRICS_FILE_PATH):
 
         """Initialize ConfigurationManager."""
         # Read YAML configuration files to initialize configuration parameters
         self.config = read_yaml(config_filepath)
         self.params = read_yaml(params_filepath)
         self.schema = read_yaml(schema_filepath)
+        self.metrics_thresholds = read_yaml(metrics_filepath)['METRICS']
 
         # Create necessary directories specified in the configuration
         create_directories([self.config.artifacts_root])
@@ -123,3 +125,18 @@ class ConfigurationManager:
         )
 
         return model_evaluation_config
+
+# Metrics Validation Config
+    def get_metrics_validation_config(self) -> MetricsValidationConfig:
+        config = self.config['model_metrics_validation']
+        
+        create_directories([config['root_dir']])
+
+        metrics_validation_config = MetricsValidationConfig(
+            root_dir=Path(config['root_dir']),
+            metric_file_name=Path(config['metric_file_name']),
+            validation_status_file=Path(config['validation_status_file']),
+            metrics_thresholds=self.metrics_thresholds,
+            
+        )
+        return metrics_validation_config

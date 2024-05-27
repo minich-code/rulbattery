@@ -46,10 +46,10 @@ model_evaluation:
   metric_file_name: artifacts/model_evaluation/metrics.json
 
 
-performance_validation:
-  root_dir: artifacts/validation_results
+model_metrics_validation:
+  root_dir: artifacts/metrics_validation_results
   metric_file_name: artifacts/model_evaluation/metrics.json
-  validation_status_file: artifacts/validation_results/validation_status.json
+  validation_status_file: artifacts/metrics_validation_results/metrics_validation_status.json
 
 
 
