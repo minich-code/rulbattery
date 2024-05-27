@@ -4,7 +4,7 @@ from src.BatteryRUL import logging
 import pandas as pd 
 
 
-PIPELINE_NAME = "Data Validation Pipeline"
+PIPELINE_NAME = "DATA VALIDATION PIPELINE"
 
 class DataValidationPipeline:
     def __init__(self):

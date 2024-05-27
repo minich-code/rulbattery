@@ -1,6 +1,7 @@
 from src.BatteryRUL.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH
 from src.BatteryRUL.utils.commons import read_yaml, create_directories
-from src.BatteryRUL.entity.configuration_entity import (DataIngestionConfig, DataValidationConfig)
+from src.BatteryRUL.entity.configuration_entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig)
+from pathlib import Path
 
 # Creating a ConfigurationManager class to manage configurations
 class ConfigurationManager:
@@ -19,6 +20,7 @@ class ConfigurationManager:
         # Create necessary directories specified in the configuration
         create_directories([self.config.artifacts_root])
 
+# Data Ingestion Config
     def get_data_ingestion_config(self) -> DataIngestionConfig:
         """Get data ingestion configuration."""
         # Get data ingestion section from config
@@ -37,7 +39,7 @@ class ConfigurationManager:
 
         return data_ingestion_config
     
-
+# Data Validation Config
     def get_data_validation_config(self) -> DataValidationConfig:
         config = self.config.data_validation 
         schema = self.schema.COLUMNS
@@ -51,3 +53,18 @@ class ConfigurationManager:
             all_schema=schema
         )
         return data_validation_config
+
+# Data Transformation Config
+
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+
+        create_directories([config.root_dir])
+
+        data_transformation_config = DataTransformationConfig(
+            root_dir=Path(config.root_dir),
+            data_path=Path(config.data_path),
+            numerical_cols=list(config.numerical_cols),
+            categorical_cols=list(config.categorical_cols)
+        )
+        return data_transformation_config

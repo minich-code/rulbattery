@@ -3,7 +3,7 @@ from src.BatteryRUL.config.configuration import ConfigurationManager
 from src.BatteryRUL.components.c_01_data_ingestion import DataIngestion
 
 
-PIPELINE_NAME = "Data Ingestion Pipeline"
+PIPELINE_NAME = "DATA INGESTION PIPELINE"
 
 class DataIngestionPipeline:
     def __init__(self):

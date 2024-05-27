@@ -6,10 +6,10 @@ from pathlib import Path
 from dataclasses import dataclass
 from scipy.stats import zscore
 
-from src.ElectricityBill import logging
-from src.ElectricityBill.utils.commons import save_object
-from src.ElectricityBill.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH
-from src.ElectricityBill.utils.commons import read_yaml, create_directories
+from src.BatteryRUL import logging
+from src.BatteryRUL.utils.commons import save_object
+from src.BatteryRUL.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH
+from src.BatteryRUL.utils.commons import read_yaml, create_directories
 
 from sklearn.model_selection import train_test_split
 from sklearn.compose import ColumnTransformer
