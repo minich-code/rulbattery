@@ -1,8 +1,8 @@
 import json
 from pathlib import Path
 from dataclasses import dataclass
-from src.ElectricityBill.utils.commons import read_yaml, save_json, create_directories
-from src.ElectricityBill.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH, METRICS_FILE_PATH
+from src.BatteryRUL.utils.commons import read_yaml, save_json, create_directories
+from src.BatteryRUL.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH, METRICS_FILE_PATH
 
 @dataclass
 class ModelValidationConfig:

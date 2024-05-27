@@ -14,8 +14,8 @@ class ModelEvaluationConfig:
 
 
 
-from src.ElectricityBill.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH
-from src.ElectricityBill.utils.commons import read_yaml, create_directories, save_json
+from src.BatteryRUL.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH
+from src.BatteryRUL.utils.commons import read_yaml, create_directories, save_json
 
 
 class ConfigurationManager:
