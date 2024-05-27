@@ -16,7 +16,7 @@ def get_requirements(file_path:str)->List[str]:
     return requirements
 
 __version__ = "0.0.1"
-SRC_REPO = "Battery-RUL"
+SRC_REPO = "BatteryRUL"
 
 setup(
     name=SRC_REPO,

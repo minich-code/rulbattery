@@ -70,6 +70,9 @@ class DataIngestion:
         # Convert the collection to a DataFrame
         df = pd.DataFrame(list(collection.find()))
 
+        if "_id" in df.columns:
+            df = df.drop(columns=["_id"])
+
         # # Save the DataFrame to a CSV file in the root directory
         # output_path = self.config.root_dir / "data.csv"
         # df.to_csv(output_path, index=False)

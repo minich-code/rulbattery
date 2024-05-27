@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 # Define the package name 
-package_name = "ElectricityBill"
+package_name = "BatteryRUL"
 
 # List the files to be created 
 list_of_files = [
@@ -46,7 +46,8 @@ list_of_files = [
     "experiment/trial_05_model_evaluation.py",
     "templates/home.html",
     "templates/index.html",
-    "template/prediction.html"
+    "templates/prediction.html",
+    "templates/train.html"
 
 ]
 

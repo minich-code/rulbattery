@@ -3,7 +3,7 @@ import os
 from box.exceptions import BoxValueError
 import sys
 import yaml
-from src.ElectricityBill import logging
+from src.BatteryRUL import logging
 import json
 import joblib
 import numpy as np
