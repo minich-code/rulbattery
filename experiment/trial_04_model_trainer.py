@@ -28,8 +28,8 @@ class ModelTrainerConfig:
     scale_pos_weight: int
 
 
-from src.ElectricityBill.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH
-from src.ElectricityBill.utils.commons import read_yaml, create_directories, save_json
+from src.BatteryRUL.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH
+from src.BatteryRUL.utils.commons import read_yaml, create_directories, save_json
 from experiment.trial_03_data_transformation import DataTransformationConfig
 
 
@@ -100,7 +100,7 @@ class ConfigurationManager:
     
 import pandas as pd 
 import os 
-from src.ElectricityBill import logging
+from src.BatteryRUL import logging
 from xgboost import XGBRegressor
 import joblib 
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score

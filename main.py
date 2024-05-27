@@ -3,6 +3,8 @@ from src.BatteryRUL.pipelines.pip_01_data_ingestion import DataIngestionPipeline
 from src.BatteryRUL.pipelines.pip_02_data_validation import DataValidationPipeline
 from src.BatteryRUL.pipelines.pip_03_data_transformation import DataTransformationPipeline
 from src.BatteryRUL.pipelines.pip_04_model_trainer import ModelTrainerPipeline
+from src.BatteryRUL.pipelines.pip_05_model_evaluation import ModelEvaluationPipeline
+
 
 
 
@@ -42,6 +44,7 @@ except Exception as e:
     logging.exception(e)
     raise e
 
+
 COMPONENT_04_NAME = "MODEL TRAINER COMPONENT"
 try:
     logging.info(f"# ======================{COMPONENT_04_NAME} Started! ================================= #")
@@ -49,6 +52,17 @@ try:
     model_trainer_pipeline.main()
     logging.info(f"## ========================{COMPONENT_04_NAME} Terminated Successfully!======================= ##\n\nx******************x")
 
+except Exception as e:
+    logging.exception(e)
+    raise e
+
+
+COMPONENT_05_NAME = "MODEL EVALUATION COMPONENT"
+try:
+    logging.info(f"# ======================{COMPONENT_05_NAME} Started! ================================= #")
+    model_evaluation_pipeline = ModelEvaluationPipeline()
+    model_evaluation_pipeline.main()
+    logging.info(f"## ========================{COMPONENT_05_NAME} Terminated Successfully!======================= ##\n\nx******************x")
 except Exception as e:
     logging.exception(e)
     raise e
