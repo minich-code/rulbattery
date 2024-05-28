@@ -14,4 +14,5 @@ Flask-Cors
 joblib
 seaborn
 pymongo
+streamlit
 -e .
