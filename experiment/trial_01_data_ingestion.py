@@ -7,9 +7,9 @@ import pandas as pd
 import os 
 
 # Importing specific constants and utility functions from custom modules
-from src.ElectricityBill.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH
-from src.ElectricityBill.utils.commons import read_yaml, create_directories
-from src.ElectricityBill import logging
+from src.BatteryRUL.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH
+from src.BatteryRUL.utils.commons import read_yaml, create_directories
+from src.BatteryRUL import logging
 
 # Defining the structure of data ingestion configuration using a data class
 @dataclass()

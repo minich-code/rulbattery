@@ -15,4 +15,9 @@ joblib
 seaborn
 pymongo
 streamlit
+
+# mlflow 
+mlflow
+dagshub
+
 -e .
