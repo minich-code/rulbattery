@@ -8,6 +8,10 @@ from src.BatteryRUL import logging
 # Create a flask app
 app = Flask(__name__)
 
+# Configure debug mode based on the environment variable
+if os.getenv('DEBUG') == 'True':
+    app.debug = True
+
 # Route for homepage 
 @app.route('/')
 def home():
@@ -68,6 +72,6 @@ def predict_data_point():
 # Run the flask app 
 
 if __name__ == '__main__':
-    app.run(host = "0.0.0.0", debug=True)
+    app.run(host = "0.0.0.0", port=8080)
 
     

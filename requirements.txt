@@ -3,7 +3,6 @@ scikit-learn
 numpy
 matplotlib
 flask
-ipykernel
 xgboost
 python-box # config box
 pyYAML # Read YAML file

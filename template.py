@@ -38,7 +38,9 @@ list_of_files = [
     "main.py",
     "app.py",
     "setup.py",
+    "streamlit_app.py",
     "requirements.txt",
+    "requirements_dev.txt"
     "experiment/trial_01_data_ingestion.py",
     "experiment/trial_02_data_validation.py",
     "experiment/trial_03_data_transformation.py",
